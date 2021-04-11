@@ -1,0 +1,7 @@
+name: Bedwars1058PartiesFix
+version: ${project.version}
+main: com.codergautamyt.bedwars1058partiesfix.Bedwars1058PartiesFix
+api-version: 1.16
+depend: [ Bedwars1058 ]
+authors: [ CoderGautamYT ]
+description: Fixes AlessioDP Parties support with bedwars1058
