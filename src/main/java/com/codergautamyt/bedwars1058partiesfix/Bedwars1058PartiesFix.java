@@ -1,6 +1,5 @@
 package com.codergautamyt.bedwars1058partiesfix;
 
-import com.andrei1058.bedwars.api.BedWars;
 import com.codergautamyt.bedwars1058partiesfix.events.OnJoinArena;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -11,15 +10,23 @@ public final class Bedwars1058PartiesFix extends JavaPlugin {
     public void onEnable() {
         // Plugin startup logic
         if (Bukkit.getPluginManager().isPluginEnabled("BedWars1058")) {
-            BedWars bedwarsAPI = Bukkit.getServicesManager().getRegistration(BedWars .class).getProvider();
+            getLogger().info("");
             if (getServer().getPluginManager().getPlugin("Parties") != null) {
                 if (getServer().getPluginManager().getPlugin("Parties").isEnabled()) {
-                    getLogger().severe("BedWars1058 or Parties was not found. Disabling...");
-                    setEnabled(false);
+                    getLogger().info("BedWars1058 and Parties was found. Injecting...");
                     Bukkit.getPluginManager().registerEvents(new OnJoinArena(), this);
+                } else {
+                    getLogger().severe("Parties wasnt found... disabling");
+                    setEnabled(false);
                 }
+            } else {
+                getLogger().severe("Parties wasnt found... disabling");
+                setEnabled(false);
             }
 
+        } else {
+            getLogger().severe("BedWars1058 wasnt found... disabling");
+            setEnabled(false);
         }
 
     }
