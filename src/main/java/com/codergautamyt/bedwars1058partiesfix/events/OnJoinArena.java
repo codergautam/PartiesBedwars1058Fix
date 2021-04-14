@@ -58,7 +58,7 @@ public class OnJoinArena implements Listener {
                         }
                     }
                 }
-            } else {
+            }/* else {
                 //we check if the player is going to the leaders game
                 //if they are, then we can allow them
                 //if there going to different game, we cancel the event and stop them
@@ -73,7 +73,7 @@ public class OnJoinArena implements Listener {
                 Bukkit.getServer().getLogger().info(player.getName()+" not going to leaders arena");
                 player.sendMessage(ChatColor.RED+"Only the party leader can warp you into bedwars");
                 e.setCancelled(true);
-            }
+            }*/
 
         }
     }
